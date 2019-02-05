@@ -179,19 +179,21 @@ end
 
 def big_shoe_rebounds
   shoes=Hash.new
+  bigfoot=""
+  rebounds=0
   game_hash.map do |k, v|
     v[:players].each do |key2, value2|
       shoes[key2]=value2[:shoe]
     end
   end
-  shoes = shoes.sort_by{|name,shoe|shoe}.last[0]
-  # game_hash.each do |k, v|
-  #   v[:players].each do |key2, value2|
-  #     if key2==name
-  #       stats=value2
-  #       break
-  #     end
-  #   end
-  # end
+  bigfoot = shoes.sort_by{|name,shoe|shoe}.last[0]
+  game_hash.each do |k, v|
+    v[:players].each do |key2, value2|
+      if key2==bigfoot
+        rebounds=value2[:rebounds]
+        break
+      end
+    end
+  end
   shoes
 end
