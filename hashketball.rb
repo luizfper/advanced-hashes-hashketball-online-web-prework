@@ -176,3 +176,24 @@ def player_stats(name)
   end
   stats
 end
+
+def big_shoe_rebounds
+  stats=Hash.new
+  shoes={}
+  game_hash.map do |k, v|
+    if v[:team_name].to_s==team
+      v[:players].each do |key2, value2|
+        jerseys<<value2[:number]
+      end
+    end
+  end
+  game_hash.each do |k, v|
+    v[:players].each do |key2, value2|
+      if key2==name
+        stats=value2
+        break
+      end
+    end
+  end
+  stats
+end
