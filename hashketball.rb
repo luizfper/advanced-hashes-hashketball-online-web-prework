@@ -178,10 +178,10 @@ def player_stats(name)
 end
 
 def big_shoe_rebounds
-  shoes={}
+  shoes=[]
   game_hash.map do |k, v|
     v[:players].each do |key2, value2|
-      jerseys<<{key2=>value2[:shoe]
+      shoes<<{key2=>value2[:shoe]}
     end
   end
   # game_hash.each do |k, v|
@@ -192,5 +192,5 @@ def big_shoe_rebounds
   #     end
   #   end
   # end
-  stats
+  shoes
 end
