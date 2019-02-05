@@ -178,7 +178,6 @@ def player_stats(name)
 end
 
 def big_shoe_rebounds
-  stats=Hash.new
   shoes={}
   game_hash.map do |k, v|
     v[:players].each do |key2, value2|
