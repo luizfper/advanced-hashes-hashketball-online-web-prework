@@ -184,7 +184,7 @@ def big_shoe_rebounds
       shoes[key2]=value2[:shoe]
     end
   end
-  shoes = shoes.sort_by{|name,shoe|shoe}
+  shoes = shoes.sort_by{|name,shoe|shoe}.flatten
   # game_hash.each do |k, v|
   #   v[:players].each do |key2, value2|
   #     if key2==name
